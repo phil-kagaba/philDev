@@ -1,0 +1,15 @@
+import React from 'react';
+
+export default function BlogSection() {
+  return (
+    <section className="mb-16" id="blog">
+      <div className="flex items-center gap-3 mb-4">
+        {/* You can add an icon here if you want */}
+        <h1 className="text-3xl font-extrabold text-yellow-400">Prompt</h1>
+      </div>
+      <p className="max-w-2xl text-lg text-gray-300 leading-relaxed">
+        Have an idea, project, or challenge? Send me your prompt and let’s build something amazing together!
+      </p>
+    </section>
+  );
+}
