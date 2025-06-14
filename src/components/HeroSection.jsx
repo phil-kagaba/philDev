@@ -8,7 +8,7 @@ export default function HeroSection() {
         Fullstack Web Developer
       </h2>
       <p className="max-w-2xl mb-8 text-lg text-gray-300 leading-relaxed">
-        I specialize in frontend and backend development for building rich and scalable web applications. Let's bring your project to life!
+        I specialize in frontend and backend development for building responsive, rich and scalable web applications. Let's bring your project to life!
       </p>
       <div className="flex gap-6">
         <a

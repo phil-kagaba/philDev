@@ -9,9 +9,9 @@ import "./styles/globals.css";
 
 function App() {
   return (
-    <div className="w-screen h-screen bg-black text-white flex flex-col md:flex-row overflow-hidden">
+    <div className="w-screen h-screen bg-black text-white flex flex-col md:flex-row">
       <Sidebar />
-      <main className="flex-1 p-6 md:p-12 overflow-auto">
+      <main className="flex-1 p-6 md:p-12 overflow-auto pb-20 md:pb-0">
         <HeroSection />
         <SkillsSection />
         <WorkSection />
