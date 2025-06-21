@@ -5,6 +5,7 @@ import Sidebar from "./components/Sidebar";
 import WorkSection from "./components/pages/WorkSection";
 import ContactSection from "./components/pages/ContactSection";
 import BlogSection from "./components/pages/BlogSection";
+import Footer from "./components/Footer"
 import "./styles/globals.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <WorkSection />
         <ContactSection />
         <BlogSection />
+        <Footer />
       </main>
     </div>
   );
