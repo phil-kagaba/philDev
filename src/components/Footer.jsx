@@ -3,41 +3,45 @@ import { FaEnvelope, FaInstagram, FaGithub } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-300 py-10">
-      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-        <p className="text-sm">© {new Date().getFullYear()} philDeBaddest. All rights reserved.</p>
-        <div className="space-x-4 mt-4 md:mt-0">
-          <a href="#" className="hover:text-yellow-400 transition">Privacy Policy</a>
-          <a href="#" className="hover:text-yellow-400 transition">Terms of Use</a>
-          <a href="#contact" className="hover:text-yellow-400 transition">Contact</a>
-        </div>
+    <footer className="bg-gray-950 text-gray-400 py-10">
+      <div className="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-6">
         
+        {/* Branding */}
+        <div className="text-center md:text-left">
+          <h2 className="text-lg font-semibold text-yellow-400">Philbert Iradukunda</h2>
+          <p className="text-sm">Full-stack Developer | React & Tailwindcss and many others</p>
+          <p className="text-xs mt-1">© 2024 All rights reserved.</p>
+        </div>
 
-        <div className="flex flex-col sm:flex-row gap-6">
-            <a
+        {/* Contact Links */}
+        <div className="flex flex-col sm:flex-row items-center gap-4">
+          <a
             href="mailto:philbertiradukunda03@gmail.com"
-            >
-            <FaEnvelope className="text-yellow-400 text-2xl" />
-            philbertiradukunda03@gmail.com
-            </a>
-            <a
+            className="flex items-center gap-2 hover:text-yellow-400 transition"
+          >
+            <FaEnvelope className="text-xl" />
+            <span className="text-sm">Email</span>
+          </a>
+          <a
             href="https://instagram.com/i__phil"
             target="_blank"
             rel="noopener noreferrer"
-            >
-            <FaInstagram className="text-yellow-400 text-2xl" />
-            @i__phil
-            </a>
-            <a
+            className="flex items-center gap-2 hover:text-yellow-400 transition"
+          >
+            <FaInstagram className="text-xl" />
+            <span className="text-sm">Instagram</span>
+          </a>
+          <a
             href="https://github.com/phil-kagaba"
             target="_blank"
             rel="noopener noreferrer"
-            >
-            <FaGithub className="text-yellow-400 text-2xl" />
-            github.com/phil-kagaba
-            </a>
+            className="flex items-center gap-2 hover:text-yellow-400 transition"
+          >
+            <FaGithub className="text-xl" />
+            <span className="text-sm">GitHub</span>
+          </a>
+          <p className="text-sm mt-1">© {new Date().getFullYear()}</p>
         </div>
-
       </div>
     </footer>
   );

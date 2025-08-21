@@ -2,35 +2,11 @@ import React from 'react';
 
 const works = [
   {
-    title: 'E-commercial Website',
-    description: 'A modern, responsive commercial website for car garage.',
-    type: 'e-commercial',
-    link: 'https://github.com/phil-kagaba/car_garage_mern_stark'
-  },
-  {
-    title: 'E-commerce Platform',
-    description: 'A full-featured online store with payment integration.',
-    type: 'E-commerce',
-    link: 'https://github.com/phil-kagaba/movie_website_project_with_bkjosh'
-  },
-  {
-    title: 'Personal Blog',
-    description: 'A customizable blog platform for online Agenda with laravel',
-    type: 'Blog',
-    link: 'https://github.com/phil-kagaba/onlineAgenda_with_laravel'
-  },
-  {
-    title: 'wallpaper Website',
-    description: 'A wallpaper web showcase my work and skills.',
-    type: 'wallpaper',
-    link: 'https://github.com/phil-kagaba/Xphilpaper-Design'
-  },
-  {
-    title: 'Landing Page',
-    description: 'High-converting landing pages for marketing campaigns.',
-    type: 'Landing Page',
-    link: 'https://github.com/phil-kagaba/landing-page'
-  },
+    title: 'FilmZone',
+    description: 'A modern, responsive commercial website for movie enthusiasts.',
+    type: 'E-commercial',
+    link: 'https://agasobanuyefilmzone.vercel.app/'
+  }
 ];
 
 export default function PortfolioSection() {
