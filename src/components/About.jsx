@@ -1,33 +1,31 @@
 import Section from "./Section";
 import { profile } from "../data";
 
-const principles = [
-  ["Responsive", "Layouts that hold up from a small phone to a wide monitor."],
-  ["Rich", "Interaction and motion that make a product feel considered."],
-  ["Scalable", "Code and data structured to grow with the business."],
-];
-
 export default function About() {
+  const facts = [
+    ["Name", profile.name],
+    ["Handle", profile.handle],
+    ["Role", profile.role],
+    ["Focus", "Frontend + backend"],
+  ];
+
   return (
-    <Section id="about" n="03" title={<>About <em>me</em></>}>
-      <div className="grid gap-16 md:grid-cols-12">
-        <p className="font-serif text-3xl leading-[1.15] tracking-tight text-paper/90 md:col-span-8 md:col-start-4 md:text-5xl">
+    <Section id="about" n="04" tone="green" title="About me">
+      <div className="grid gap-12 md:grid-cols-12">
+        <p className="text-2xl font-medium leading-[1.25] tracking-tight md:col-span-7 md:text-4xl">
           I&apos;m {profile.name.split(" ")[0]} — known online as{" "}
-          <span className="italic text-signal">{profile.handle}</span>. I specialise in frontend and backend
+          <span className="bg-accent px-1.5 text-onaccent">{profile.handle}</span>. I specialise in frontend and backend
           development, taking ideas from a rough sketch to a live product. Let&apos;s bring your project to life.
         </p>
 
-        <div className="grid gap-10 md:col-span-9 md:col-start-4 md:grid-cols-3">
-          {principles.map(([t, d], i) => (
-            <div key={t} className="border-t border-paper/40 pt-5">
-              <p className="label mb-3">
-                <span className="text-signal">({i + 1})</span>
-              </p>
-              <h3 className="mb-2 text-lg font-medium">{t}</h3>
-              <p className="text-sm leading-relaxed text-mute">{d}</p>
+        <dl className="self-end md:col-span-4 md:col-start-9">
+          {facts.map(([k, v]) => (
+            <div key={k} className="grid grid-cols-3 gap-4 border-t border-fg/15 py-3 last:border-b">
+              <dt className="label pt-0.5">{k}</dt>
+              <dd className="col-span-2 text-sm font-medium">{v}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </div>
     </Section>
   );

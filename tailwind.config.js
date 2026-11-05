@@ -4,20 +4,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: "#0d0d0b",
-        coal: "#161613",
-        paper: "#ece7dc",
-        mute: "#8b867b",
-        line: "rgba(236, 231, 220, 0.12)",
-        signal: "#ff6a2b",
+        // Tone-aware tokens: each card sets these via .tone-light / .tone-dark / .tone-green
+        bg: "rgb(var(--bg) / <alpha-value>)",
+        fg: "rgb(var(--fg) / <alpha-value>)",
+        accent: "rgb(var(--accent) / <alpha-value>)",
+        onaccent: "rgb(var(--onaccent) / <alpha-value>)",
+        // Fixed palette
+        ink: "#0c0d0c",
+        snow: "#f6f7f2",
+        lime: "#b5ef8a",
+        fog: "#dcdfd6",
       },
       fontFamily: {
-        serif: ['"Instrument Serif"', "Georgia", "serif"],
+        display: ['"Archivo"', '"Inter Tight"', "system-ui", "sans-serif"],
         sans: ['"Inter Tight"', "system-ui", "sans-serif"],
         mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
-      },
-      letterSpacing: {
-        tightest: "-0.045em",
       },
     },
   },

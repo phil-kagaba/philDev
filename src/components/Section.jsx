@@ -1,21 +1,26 @@
 import { motion } from "framer-motion";
+import { profile } from "../data";
 
-export default function Section({ id, n, title, aside, children }) {
+/** A deck-style "slide": corner meta row, big condensed title, then content. */
+export default function Section({ id, n, title, tone = "dark", aside, children }) {
   return (
-    <section id={id} className="border-b border-line">
-      <div className="mx-auto max-w-[1400px] px-5 py-20 md:px-10 md:py-32">
+    <section id={id} className={`card tone-${tone}`}>
+      <div className="grid grid-cols-2 border-b border-fg/15 px-5 py-4 md:grid-cols-3 md:px-8">
+        <span className="label">{n}</span>
+        <span className="label hidden text-center md:block">{profile.name}</span>
+        <span className="label text-right">{id}</span>
+      </div>
+
+      <div className="px-5 py-14 md:px-8 md:py-20">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-14 grid gap-6 md:mb-20 md:grid-cols-12"
+          className="mb-12 grid items-end gap-6 md:mb-16 md:grid-cols-12"
         >
-          <p className="label md:col-span-3">
-            <span className="text-signal">{n}</span> &nbsp;/&nbsp; {id}
-          </p>
-          <h2 className="font-serif text-5xl leading-[0.95] tracking-tight md:col-span-6 md:text-7xl">{title}</h2>
-          {aside && <p className="self-end text-sm leading-relaxed text-mute md:col-span-3">{aside}</p>}
+          <h2 className="display text-6xl md:col-span-8 md:text-8xl">{title}</h2>
+          {aside && <p className="max-w-xs text-sm leading-relaxed text-fg/60 md:col-span-4 md:justify-self-end">{aside}</p>}
         </motion.div>
         {children}
       </div>

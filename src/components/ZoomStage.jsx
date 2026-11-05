@@ -70,10 +70,10 @@ export default function ZoomStage({ children }) {
       const target = hash === "#top" ? null : document.querySelector(hash);
       if (!scroller || (hash !== "#top" && !target)) return;
       const nextTop = target
-        ? target.getBoundingClientRect().top - scroller.getBoundingClientRect().top + scroller.scrollTop
+        ? target.getBoundingClientRect().top - scroller.getBoundingClientRect().top + scroller.scrollTop - 76
         : 0;
       const jump = () => {
-        scroller.scrollTop = nextTop;
+        scroller.scrollTop = Math.max(0, nextTop);
         history.replaceState(null, "", hash);
       };
       if (reduce) return jump();
@@ -136,12 +136,12 @@ export default function ZoomStage({ children }) {
   }, [zoomed, zoomOut]);
 
   return (
-    <div className="fixed inset-0 overflow-hidden bg-[#060605]" style={{ perspective: "1800px" }}>
+    <div className="fixed inset-0 overflow-hidden bg-[#141513]" style={{ perspective: "1800px" }}>
       <motion.div
         animate={controls}
         initial={{ scale: 1, rotateX: 0, rotateY: 0, borderRadius: 0, originZ: 0 }}
         onClick={onClick}
-        className="grain absolute inset-0 overflow-hidden bg-ink shadow-[0_40px_120px_-20px_rgba(0,0,0,0.9)] ring-1 ring-line"
+        className="grain absolute inset-0 overflow-hidden bg-[#070807] shadow-[0_40px_120px_-20px_rgba(0,0,0,0.9)] ring-1 ring-white/5"
         style={{ transformStyle: "preserve-3d", cursor: zoomed ? "zoom-out" : "zoom-in" }}
       >
         <div
@@ -153,10 +153,10 @@ export default function ZoomStage({ children }) {
 
         <div
           data-no-zoom
-          className="pointer-events-none absolute bottom-5 right-5 hidden items-center gap-2 rounded-full border border-line bg-ink/80 px-3 py-1.5 backdrop-blur md:flex"
+          className="pointer-events-none absolute bottom-5 right-5 hidden items-center gap-2 rounded-full bg-ink/90 text-snow ring-1 ring-white/10 px-3 py-1.5 backdrop-blur md:flex"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-signal" />
-          <span className="label !text-[10px]">
+          <span className="h-1.5 w-1.5 rounded-full bg-lime" />
+          <span className="font-mono text-[10px] uppercase tracking-[0.14em] text-snow/80">
             {zoomed ? "Click · Esc · Scroll to return" : "Use the menu to turn the page · click to look closer"}
           </span>
         </div>

@@ -1,39 +1,33 @@
 import Section from "./Section";
 import { works, profile } from "../data";
 
+const cols = "grid grid-cols-12 gap-x-4 gap-y-3 px-3 md:px-4";
+
 function Row({ index, title, type, description, stack = [], link }) {
   return (
     <a
       href={link}
       target="_blank"
       rel="noopener noreferrer"
-      className="group relative grid grid-cols-12 items-baseline gap-4 border-t border-line px-3 py-8 transition-colors md:px-5 md:py-10"
+      className={`group ${cols} items-start border-t border-fg/15 py-6 transition-colors duration-300 hover:bg-accent hover:text-onaccent md:py-7`}
     >
-      <span className="absolute inset-0 origin-bottom scale-y-0 bg-paper transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)] group-hover:scale-y-100" />
-      <span className="relative col-span-2 font-mono text-xs text-mute transition group-hover:text-ink/60 md:col-span-1">
-        {String(index).padStart(2, "0")}
+      <span className="col-span-2 pt-1 font-mono text-xs opacity-60 md:col-span-1">{String(index).padStart(2, "0")}</span>
+      <span className="col-span-10 md:col-span-4">
+        <span className="display block text-3xl md:text-4xl">{title}</span>
+        <span className="mt-2 block font-mono text-[10px] uppercase tracking-widest opacity-60">{type}</span>
       </span>
-      <span className="relative col-span-10 font-serif text-4xl leading-none tracking-tight transition group-hover:translate-x-2 group-hover:text-ink md:col-span-5 md:text-6xl">
-        {title}
+      <span className="col-span-10 col-start-3 text-sm leading-relaxed opacity-70 md:col-span-4 md:col-start-auto">
+        {description}
       </span>
-      <span className="relative col-span-10 col-start-3 flex flex-col gap-3 md:col-span-4 md:col-start-auto">
-        <span className="text-sm leading-relaxed text-mute transition group-hover:text-ink/70">{description}</span>
-        {stack.length > 0 && (
-          <span className="flex flex-wrap gap-1.5">
-            {stack.map((s) => (
-              <span
-                key={s}
-                className="rounded-full border border-line px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-paper/70 transition group-hover:border-ink/20 group-hover:text-ink/70"
-              >
-                {s}
-              </span>
-            ))}
+      <span className="col-span-10 col-start-3 flex flex-wrap gap-1.5 md:col-span-2 md:col-start-auto">
+        {stack.map((s) => (
+          <span key={s} className="rounded-full border border-fg/20 px-2 group-hover:border-onaccent/30 py-0.5 font-mono text-[10px] uppercase tracking-wider opacity-80">
+            {s}
           </span>
-        )}
+        ))}
       </span>
-      <span className="relative col-span-12 flex items-center justify-between md:col-span-2 md:justify-end md:gap-6">
-        <span className="label whitespace-nowrap transition group-hover:text-ink/60">{type}</span>
-        <span className="grid h-10 w-10 place-items-center rounded-full border border-line text-lg transition group-hover:-rotate-45 group-hover:border-ink group-hover:bg-ink group-hover:text-paper">
+      <span className="col-span-12 flex justify-end md:col-span-1">
+        <span className="grid h-9 w-9 place-items-center rounded-full border border-fg/25 transition group-hover:-rotate-45 group-hover:border-onaccent group-hover:bg-onaccent group-hover:text-accent">
           →
         </span>
       </span>
@@ -45,11 +39,19 @@ export default function Work() {
   return (
     <Section
       id="work"
-      n="01"
-      title={<>Selected <em>work</em></>}
+      n="02"
+      tone="green"
+      title="Selected work"
       aside="Commercial sites, e-commerce, blogs and more. Each one built end to end."
     >
-      <div className="border-b border-line">
+      <div className={`${cols} hidden pb-3 md:grid`}>
+        {["No.", "Project", "About", "Stack"].map((h, i) => (
+          <span key={h} className={`label ${["md:col-span-1", "md:col-span-4", "md:col-span-4", "md:col-span-2"][i]}`}>
+            {h}
+          </span>
+        ))}
+      </div>
+      <div className="border-b border-fg/15">
         {works.map((w, i) => (
           <Row key={w.title} index={i + 1} {...w} />
         ))}
@@ -58,6 +60,7 @@ export default function Work() {
           title="More on GitHub"
           type="Archive"
           description="Experiments, open-source work and the rest of what I've shipped."
+          stack={["GitHub"]}
           link={profile.github}
         />
       </div>
