@@ -29,9 +29,9 @@ export const works = [
   {
     title: "FeelFreeDoc",
     type: "Web app",
-    description: "A web project deployed on Vercel.",
-    stack: ["Vercel"],
-    link: "https://feelfreedoc.vercel.app/",
+    description: "A web project deployed on Railway.",
+    stack: ["Railway"],
+    link: "https://feelfreedoc.up.railway.app/",
   },
 ];
 
