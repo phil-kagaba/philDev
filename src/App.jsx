@@ -1,27 +1,22 @@
-// src/App.jsx
-import HeroSection from "./components/HeroSection";
-import SkillsSection from "./components/SkillsSection";
-import Sidebar from "./components/Sidebar";
-import WorkSection from "./components/pages/WorkSection";
-import ContactSection from "./components/pages/ContactSection";
-import BlogSection from "./components/pages/BlogSection";
-import Footer from "./components/Footer"
-import "./styles/globals.css";
+import ZoomStage from "./components/ZoomStage";
+import Nav from "./components/Nav";
+import Hero from "./components/Hero";
+import Work from "./components/Work";
+import Capabilities from "./components/Capabilities";
+import About from "./components/About";
+import Contact from "./components/Contact";
 
-function App() {
+export default function App() {
   return (
-    <div className="w-screen h-screen bg-black text-white flex flex-col md:flex-row">
-      <Sidebar />
-      <main className="flex-1 p-6 md:p-12 overflow-auto pb-20 md:pb-0">
-        <HeroSection />
-        <SkillsSection />
-        <WorkSection />
-        <ContactSection />
-        <BlogSection />
-        <Footer />
+    <ZoomStage>
+      <Nav />
+      <main>
+        <Hero />
+        <Work />
+        <Capabilities />
+        <About />
+        <Contact />
       </main>
-    </div>
+    </ZoomStage>
   );
 }
-
-export default App;
