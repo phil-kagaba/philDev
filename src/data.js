@@ -2,8 +2,10 @@ export const profile = {
   name: "Philbert Iradukunda",
   handle: "i_philDev",
   role: "Full-stack Web Developer",
-  email: "philbertiradukunda03@gmail.com",
-  github: "https://github.com/phil-kagaba",
+  email1: "philbertiradukunda03@gmail.com",
+  email2: "p.iradukund1@alustudent.com",
+  github1: "https://github.com/phil-kagaba",
+  github2: "https://github.com/piradukund1",
   instagram: "https://instagram.com/i__phil",
 };
 
