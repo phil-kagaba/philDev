@@ -40,7 +40,7 @@ export default function Hero() {
           <div className="flex items-center gap-4">
             <figure className="group w-24 shrink-0 overflow-hidden rounded-full border border-fg/15 p-1 md:w-28">
               <img
-                src="/pro.jpg"
+                src="/me.png"
                 alt="Portrait of Philbert Iradukunda"
                 className="aspect-square w-full rounded-full object-cover grayscale transition duration-700 group-hover:grayscale-0"
               />
